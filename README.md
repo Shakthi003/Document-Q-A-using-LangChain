@@ -27,11 +27,53 @@ Vector Store	ChromaDB
 PDF Loader	LangChain PyPDFLoader
 Language	Python 3.11+
 ⚙️ Installation
-
 1️⃣ Clone the Repository
-
 git clone https://github.com/Shakthi003/Document-Q-A-using-LangChain.git
 cd Document-Q-A-using-LangChain
+
+2️⃣ Create a Virtual Environment
+python -m venv .venv
+.venv\Scripts\activate   # On Windows
+
+3️⃣ Install Requirements
+pip install -r requirements.txt
+
+4️⃣ Ensure Ollama is Installed
+
+Download and install Ollama from https://ollama.ai
+
+Then pull the Gemma model:
+
+ollama pull gemma:2b
+
+5️⃣ Run the Streamlit App
+streamlit run app.py
+
+🧠 Usage
+
+Upload one or more PDF files under “📄 Upload PDF(s)”.
+
+Click 🛠️ Process documents and (re)build index to generate embeddings.
+
+Enter your question in the text box — the app retrieves and answers from your documents.
+
+🛠️ Example Questions
+
+“What is the purpose of this report?”
+
+“Summarize the main findings.”
+
+“Who is mentioned in section 2?”
+
+🚧 Future Improvements
+
+Add support for DOCX, TXT, and HTML documents
+
+Allow switching between multiple Ollama models (Mistral, Llama3, Gemma)
+
+Integrate chat history and memory
+
+Enable streamed token responses for faster interaction
 
 
 2️⃣ Create a Virtual Environment
@@ -58,6 +100,7 @@ ollama pull gemma:2b
 
 streamlit run app.py
 
+
 🧠 Usage
 
 Upload one or more PDF files under “📄 Upload PDF(s)”.
@@ -73,15 +116,6 @@ Enter your question in the text box — the app retrieves and answers from your 
 “Summarize the main findings.”
 
 “Who is mentioned in section 2?”
-
-📂 Project Structure
-📦 Document-Q-A-using-LangChain
- ┣ 📁 data/              # Uploaded PDF files
- ┣ 📁 db/                # Persistent Chroma vector database
- ┣ 📜 app.py             # Main Streamlit app
- ┣ 📜 utils.py           # Utility functions
- ┣ 📜 requirements.txt   # Dependencies
- ┗ 📜 .gitignore         # Ignore data/, db/, .venv/
 
 
 🚧 Future Improvements
