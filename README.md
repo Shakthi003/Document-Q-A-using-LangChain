@@ -1,102 +1,97 @@
 # 📄 Document Q&A using LangChain & Streamlit
 
-An interactive Streamlit web app that allows users to **upload PDF documents**, create **semantic embeddings**, and **ask natural language questions** about the uploaded files.
+An interactive Streamlit web app that allows users to upload PDF documents, create semantic embeddings locally using Ollama (Gemma), and ask natural language questions grounded in the uploaded files.
 
-The app uses **LangChain**, **Google Gemini (or OpenAI)**, and **Chroma vector store** to perform intelligent document retrieval and question-answering.
+The app leverages LangChain, Ollama (Gemma 2B), and ChromaDB for intelligent document retrieval and question-answering — all running locally without cloud dependencies.
 
----
+🚀 Features
 
-## 🚀 Features
+📚 Upload and process multiple PDF documents
 
-* 📚 Upload and process multiple PDF documents
-* 🔍 Automatic text chunking and vector embedding generation
-* 💬 Ask questions and get answers based on document content
-* 🧠 Uses **LangChain**, **Chroma**, and **LLMs (Gemini or OpenAI)**
-* 💾 Persistent vector database for fast querying
-* 🌐 Simple and beautiful Streamlit UI
+🔍 Automatic text chunking and embedding creation with Gemma via Ollama
 
----
+💬 Ask questions and get contextual answers from your PDFs
 
-## 🧩 Tech Stack
+🧠 Powered by LangChain, Ollama, and Chroma
 
-| Component    | Technology                          |
-| ------------ | ----------------------------------- |
-| Frontend UI  | Streamlit                           |
-| AI Framework | LangChain                           |
-| Embeddings   | Google Generative AI / OpenAI       |
-| Vector Store | ChromaDB                            |
-| PDF Loader   | PyMuPDF / LangChain Document Loader |
-| Language     | Python 3.11+                        |
+💾 Persistent local vector database for quick retrieval
 
----
+🌐 Clean and responsive Streamlit interface
 
-## ⚙️ Installation
+🧩 Tech Stack
+Component	Technology
+Frontend UI	Streamlit
+AI Framework	LangChain
+Embeddings	Ollama (Gemma 2B)
+Vector Store	ChromaDB
+PDF Loader	LangChain PyPDFLoader
+Language	Python 3.11+
+⚙️ Installation
 
-1️⃣ **Clone the Repository**
+1️⃣ Clone the Repository
 
-```bash
 git clone https://github.com/Shakthi003/Document-Q-A-using-LangChain.git
 cd Document-Q-A-using-LangChain
-```
 
-2️⃣ **Create Virtual Environment**
 
-```bash
+2️⃣ Create a Virtual Environment
+
 python -m venv .venv
-.venv\Scripts\activate  # On Windows
-```
+.venv\Scripts\activate   # On Windows
 
-3️⃣ **Install Requirements**
 
-```bash
+3️⃣ Install Requirements
+
 pip install -r requirements.txt
-```
 
-4️⃣ **Run the Streamlit App**
 
-```bash
+4️⃣ Ensure Ollama is Installed
+
+Download and install Ollama from https://ollama.ai
+
+Then pull the Gemma model:
+
+ollama pull gemma:2b
+
+
+5️⃣ Run the Streamlit App
+
 streamlit run app.py
-```
 
----
+🧠 Usage
 
-## 🧠 Usage
+Upload one or more PDF files under “📄 Upload PDF(s)”.
 
-1. Upload one or more PDF files.
-2. Click **“Process documents and (re)build index”**.
-3. Type a question related to your documents.
-4. The app will return an AI-generated answer based on your uploaded files.
+Click 🛠️ Process documents and (re)build index to generate embeddings.
 
----
+Enter your question in the text box — the app retrieves and answers from your documents.
 
-## 🛠️ Example Questions
+🛠️ Example Questions
 
-* “What is the summary of Chapter 3?”
-* “Who is the author of the document?”
-* “List the key findings from this report.”
+“What is the purpose of this report?”
 
----
+“Summarize the main findings.”
 
-## 📂 Project Structure
+“Who is mentioned in section 2?”
 
-```
+📂 Project Structure
 📦 Document-Q-A-using-LangChain
  ┣ 📁 data/              # Uploaded PDF files
  ┣ 📁 db/                # Persistent Chroma vector database
  ┣ 📜 app.py             # Main Streamlit app
  ┣ 📜 utils.py           # Utility functions
  ┣ 📜 requirements.txt   # Dependencies
- ┣ 📜 .env               # (Not committed) API keys
- ┗ 📜 .gitignore         # Ignore sensitive files
-```
+ ┗ 📜 .gitignore         # Ignore data/, db/, .venv/
 
----
 
-## 🚧 Future Improvements
+🚧 Future Improvements
 
-* Support for DOCX and TXT uploads
-* Multi-model selection (Gemini / OpenAI / Claude)
-* Summarization and chat history memory
-* Streamed token responses for real-time answers
+Add support for DOCX, TXT, and HTML documents
+
+Allow switching between multiple Ollama models (Mistral, Llama3, Gemma)
+
+Integrate chat history and memory
+
+Enable streamed token responses for faster interaction
 
 ---
