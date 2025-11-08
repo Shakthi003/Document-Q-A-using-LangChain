@@ -52,16 +52,7 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-4️⃣ **Set Up API Key**
-Create a `.env` file in the project root and add your API key:
-
-```bash
-GOOGLE_API_KEY=your_gemini_api_key
-# OR
-OPENAI_API_KEY=your_openai_api_key
-```
-
-5️⃣ **Run the Streamlit App**
+4️⃣ **Run the Streamlit App**
 
 ```bash
 streamlit run app.py
